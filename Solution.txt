@@ -1,0 +1,47 @@
+public class Main {
+    public static int checkOut(String items){
+        int a = 50;
+        int b = 30;
+        int c = 20;
+        int d = 10;
+        int countA = 0;
+        int countB = 0;
+        int total = 0;
+        for (int i = 0; i < items.length(); i++) {
+            if (items.charAt(i) == 'A') {
+                countA++;
+            } else if (items.charAt(i) == 'B') {
+               countB++;
+            } else if (items.charAt(i) == 'C') {
+                total += c;
+            } else if (items.charAt(i) == 'D') {
+                total += d;
+            }
+        }
+        if (countA % 3 == 0){
+            total += ((countA / 3) * 130);
+        }
+        else{
+            int x = (countA / 3) * 130;
+            int y = (countA % 3) * a;
+            total += (x + y);
+        }
+        if (countB % 2 == 0){
+            total += ((countB / 2) * 37);
+        }
+        else{
+            int x = (countB / 2) * 37;
+            int y = (countB % 2) * b;
+            total += (x + y);
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        int check1 = Main.checkOut("DABA");
+        int check2 = Main.checkOut("BBBB");
+        System.out.println(check1);
+        System.out.println(check2);
+
+    }
+}
